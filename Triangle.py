@@ -57,6 +57,6 @@ def classifyTriangle(a,b,c):
     elif (a != b) and  (b != c) and (a != c):
         output+= 'Scalene'
     else:
-        output+='Isoceles'
+        output+='Isosceles'
 
     return output
