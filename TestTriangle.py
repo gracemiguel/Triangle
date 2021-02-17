@@ -18,21 +18,19 @@ class TestTriangles(unittest.TestCase):
     # define multiple sets of tests as functions with names that begin
 
     def testRightTriangleA(self): 
-        self.assertEqual(classifyTriangle(3,4,5),'Right','3,4,5 is a Right triangle')
+        self.assertEqual(classifyTriangle(3,4,5),'Right and Scalene','3,4,5 is a Right triangle')
 
     def testRightTriangleB(self): 
-        self.assertEqual(classifyTriangle(5,3,4),'Right','5,3,4 is a Right triangle')
+        self.assertEqual(classifyTriangle(5,3,4),'Right and Scalene','5,3,4 is a Right triangle')
         
     def testEquilateralTriangles(self): 
         self.assertEqual(classifyTriangle(1,1,1),'Equilateral','1,1,1 should be equilateral')
     def testNotATriangle(self):
-        self.assertEqual(classifyTriangle(7,6,12), "NotATriangle")
-    def testNoInput(self):
-        self.assertEqual(classifyTriangle(), "InvalidInput")
+        self.assertEqual(classifyTriangle(7,6,12), "Scalene")
     def testWrongType(self):
         self.assertEqual(classifyTriangle('hi', 2, 3), "InvalidInput")
     def testIsoscelesTriangle(self):
-        self.assertEqual(classifyTriangle(4,4,10), "Isosceles", '4,4,10 should be isosceles')
+        self.assertEqual(classifyTriangle(4,4,10), "NotATriangle", '4,4,10 should be isosceles')
 
 if __name__ == '__main__':
     print('Running unit tests')
