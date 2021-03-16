@@ -9,10 +9,10 @@ The primary goal of this file is to demonstrate a simple python program to class
 @author: rk
 """
 
-def classifyTriangle(a,b,c):
+def classify_Triangle(a,b,c):
     """
-    Your correct code goes here...  Fix the faulty logic below until the code passes all of 
-    you test cases. 
+    Your correct code goes here...  Fix the faulty logic below until the code passes all of
+    you test cases.
     
     This function returns a string with the type of triangle from three integer values
     corresponding to the lengths of the three sides of the Triangle.
@@ -29,27 +29,23 @@ def classifyTriangle(a,b,c):
     output = ""
    
 
-    # verify that all 3 inputs are integers  
+    # verify that all 3 inputs are integers
     # Python's "isinstance(object,type) returns True if the object is of the specified type
-    if (type(a) !=int or type(b) != int or type(c) != int):
+    if ( not isinstance(a, int) or not isinstance(b, int) or not isinstance(c, int)):
         return 'InvalidInput'
     # require that the input values be >= 0 and <= 200
     if a > 200 or b > 200 or c > 200:
         return 'InvalidInput'
-        
     if a <= 0 or b <= 0 or c <= 0:
-        return 'InvalidInput'
-    
-    
-      
-    # This information was not in the requirements spec but 
+        return 'InvalidInput'  
+    # This information was not in the requirements spec but
     # is important for correctness
     # the sum of any two sides must be strictly less than the third side
     # of the specified shape is not a triangle
     if (a >= (b + c)) or (b >= (a + c)) or (c >= (a + b)):
         return 'NotATriangle'
         
-    # now we know that we have a valid triangle 
+    # now we know that we have a valid triangle
     if((a * a) + (b * b)) == (c * c) or ((a*a)+ (c*c))== (b*b) or ((b*b) + (c*c)) ==(a*a):
         output+= 'Right and '
     if a == b and b == c:
